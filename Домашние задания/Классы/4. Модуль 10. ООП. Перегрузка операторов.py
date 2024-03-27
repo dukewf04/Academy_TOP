@@ -79,6 +79,7 @@ from math import pi
 #         image = self.a*other.b + self.b*other.a
 #
 #         return self.__getComplexNumber(real, image)
+#
 #     def __truediv__(self, other):
 #         real = (self.a*other.a + self.b*other.b)/(other.a**2 + other.b**2)
 #         image = (self.b*other.a - self.a*other.b)/(other.a**2 + other.b**2)
@@ -86,8 +87,8 @@ from math import pi
 #         return self.__getComplexNumber(real, image)
 #
 #
-# z1 = Complex(a=2, b=3)
-# z2 = Complex(a=-5, b=-7)
+# z1 = Complex(a=4, b=3)
+# z2 = Complex(a=2, b=-6)
 #
 # print(f"z1+z2 = {z1 + z2}")
 # print(f"z1-z2 = {z1 - z2}")
