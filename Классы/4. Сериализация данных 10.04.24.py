@@ -14,6 +14,7 @@
 #     string2 = f.read()
 #     print(string2)
 
+import os
 class CountryDict:
     def __init__(self):
         self.data = {}
@@ -45,8 +46,11 @@ class CountryDict:
             f.write(repr(self.data))
 
     def load_data(self, filename):
-        with open(filename, "r") as f:
-            self.data = eval(f.read())
+        if os.path.exists(self.__filename):
+            with open(filename, "r") as f:
+                self.data = eval(f.read())
+        else:
+            print("File does not exist!")
 
     def menu(self):
         print("*" * 11, "Welcome!")
