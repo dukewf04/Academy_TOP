@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Как выучить Python",
+        "author": "Джон Доу",
+        "char_count": "900",
+        "publisher": "Питер",
+        "about": "Выучить Python за 1 час"
+    },
+    {
+        "title": "Статься №2",
+        "author": "Анна Семинович",
+        "char_count": "555",
+        "publisher": "Азбука",
+        "about": "Что-то там"
+    },
+    {
+        "title": "Название 2",
+        "author": "Я",
+        "char_count": "много",
+        "publisher": "незнаю",
+        "about": "ни о чем"
+    }
+]
