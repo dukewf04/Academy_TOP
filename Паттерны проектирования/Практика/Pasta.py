@@ -162,3 +162,79 @@ import tabulate as tab
 # pzm = pzm_builder.show_menu().cooking()
 #
 # print(pzm)
+
+
+# Task 3 (паттерн Prototype)
+# from abc import ABCMeta, abstractmethod
+# import copy
+# class Courses_PJR(metaclass=ABCMeta):
+#     def __init__(self):
+#         self.id = None
+#         self.type = None
+#     @abstractmethod
+#     def cource(self):
+#         pass
+#     def get_type(self):
+#         return self.type
+#     def get_id(self):
+#         return self.id
+#     def set_id(self, id):
+#         self.id = id
+#     def clone(self):
+#         return copy.copy(self)
+#
+# class Python(Courses_PJR):
+#     def __init__(self):
+#         super().__init__()
+#         self.type = "Python"
+#     def cource(self):
+#         print("Cource python method")
+# class Java(Courses_PJR):
+#     def __init__(self):
+#         super().__init__()
+#         self.type = "Java"
+#     def cource(self):
+#         print("Cource java method")
+#
+# class R(Courses_PJR):
+#     def __init__(self):
+#         super().__init__()
+#         self.type = "R"
+#     def cource(self):
+#         print("Cource R method")
+#
+# # Класс кэш
+# class Courses_cache:
+#     cache = {}
+#
+#     @staticmethod
+#     def get_course(sid):
+#         COURSE = Courses_cache.cache.get(sid, None)
+#         return COURSE.clone()
+#
+#     @staticmethod
+#     def load():
+#         python = Python()
+#         python.set_id("1")
+#         Courses_cache.cache[python.get_id()] = python
+#
+#         java = Java()
+#         java.set_id("2")
+#         Courses_cache.cache[java.get_id()] = java
+#
+#         r = R()
+#         r.set_id("3")
+#         Courses_cache.cache[r.get_id()] = r
+#
+#
+# if __name__ == "__main__":
+#     Courses_cache.load()
+#
+#     python_course = Courses_cache.get_course("1")
+#     print(python_course.get_type())
+#
+#     java_course = Courses_cache.get_course("2")
+#     print(java_course.get_type())
+#
+#     r_course = Courses_cache.get_course("3")
+#     print(r_course.get_type())
