@@ -1,0 +1,8 @@
+<!-- Конструкция экранного приложения -->
+MainWindow - QMainWindow
+    CentralWidget - QWidget
+    lbl_equal - QLabel
+    lbl_plus - QLabel
+    le_c - QLineEdit
+    le_d - QLineEdit
+    le_result - QLineEdit
