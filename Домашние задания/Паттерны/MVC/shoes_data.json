@@ -1,0 +1,26 @@
+[
+   {
+      "gender_type": "1",
+      "type": "1",
+      "color": "1",
+      "price": "1",
+      "manufactor": "1",
+      "size": "1"
+   },
+   {
+      "gender_type": "2",
+      "type": "2",
+      "color": "2",
+      "price": "2",
+      "manufactor": "2",
+      "size": "2"
+   },
+   {
+      "gender_type": "Мужская",
+      "type": "сапоги",
+      "color": "5",
+      "price": "54",
+      "manufactor": "4",
+      "size": "3"
+   }
+]
