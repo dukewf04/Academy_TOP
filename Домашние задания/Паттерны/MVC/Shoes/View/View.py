@@ -1,11 +1,10 @@
 from Controller.main_controller import ShoesController
 
-shoes = ShoesController()
 
 class MainView:
     """Реализация класса представление"""
     def __init__(self):
-        pass
+        self.shoes_controller = ShoesController()
 
     def show(self):
         while True:
@@ -25,6 +24,6 @@ class MainView:
                     'manufactor': input("Введите производителя обуви> "),
                     'size': input("Введите размер обуви> "),
                 }
-                shoes.validate_data(data)
+                self.shoes_controller.validate_data(data)
             elif choice == '2':
-                shoes.load_data()
+                self.shoes_controller.load_data()
