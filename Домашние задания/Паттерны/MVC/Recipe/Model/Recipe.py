@@ -1,19 +1,19 @@
 import json
 
+
 class Recipe:
     __DATA_STRUCTURE = {
-       "name": "Имя",
-       "author": "Автор",
-       "type": "Тип рецепта",
-       "title": "Описание",
-       "link": "Ссылка на видео с рецептом",
-       "ingredients_list": "Список ингридиентов",
-       "kitchen_name": "Название кухни"
+        "name": "Имя",
+        "author": "Автор",
+        "type": "Тип рецепта",
+        "title": "Описание",
+        "link": "Ссылка на видео с рецептом",
+        "ingredients_list": "Список ингридиентов",
+        "kitchen_name": "Название кухни",
     }
 
     def __init__(self):
         self.__data: list[dict[str, str]] = []
-
 
     def printf(self, data: dict):
         """Структурированный вывод данных на экран"""
@@ -24,14 +24,13 @@ class Recipe:
     def add_recipe(self, data):
         self.__data.append(data)
 
-
     def get_all_recipes(self):
         count = 0
         for el in self.__data:
             count += 1
             print(f"\t[{count}]")
             self.printf(el)
-            print('-'*20)
+            print("-" * 20)
 
     def find_recipie(self, name):
         if len(self.__data) == 0:
@@ -40,7 +39,7 @@ class Recipe:
 
         empty = True
         for el in self.__data:
-            if el['name'].find(name) != -1:
+            if el["name"].find(name) != -1:
                 empty = False
                 self.printf(el)
 

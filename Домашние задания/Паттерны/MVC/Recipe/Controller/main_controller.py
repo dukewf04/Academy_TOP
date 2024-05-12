@@ -1,7 +1,9 @@
 from Model.Recipe import Recipe
 
+
 class RecipeController:
     """Рализация класса контроллер. Валидация данных, передача в модель."""
+
     def __init__(self):
         self.recipe = Recipe()
 
@@ -12,7 +14,6 @@ class RecipeController:
                 return
 
         self.recipe.add_recipe(data)
-
 
     def load_data(self):
         self.recipe.get_all_recipes()
