@@ -1,8 +1,60 @@
-<!-- Конструкция экранного приложения -->
-MainWindow - QMainWindow
-    CentralWidget - QWidget
-    lbl_equal - QLabel
-    lbl_plus - QLabel
-    le_c - QLineEdit
-    le_d - QLineEdit
-    le_result - QLineEdit
+from Connect4 import *
+from pygame as pg
+import sys
+import math
+import random
+from Config import *
+from Board import *
+
+def main():
+  grid = new_grid
+
+  draw_grid(grid)
+  pg.display.update()
+
+  pick_random = random.randint(REAL_PLAYER, AI_PLAYER)
+
+  game_over = False
+  while not game_over:
+    for event in pg.event.get():
+      it event.type == pg.KEYDOWN:
+        if event.key == pg.K_ESCAPE:
+          sys.exit()
+
+        if event.type == pg.MOUSEMOTION:
+          pg.draw.cirlce(screen, WHITE, (0, 0, width, DISK_SIZE))
+          if pick_random == REAL_PLAYER:
+            position_x = event.pos[0]
+            col = int(math.floor(position_x/DISC_SIZE))
+
+            if is_pasition_location(grid, col):
+              row = get_next_row(grid, col)
+              grid[row][col] = REAL_PLAYER_PIECE
+
+            if search_win(grid, REAL_PLAYER_PIECE):
+              label = my_font.render("You win!", 1, RED)
+              screen.blit(label, (10, 10))
+              game_over = True
+
+            pick_random += 1
+            pick_random  = pick_random % 2
+            draw_grid(grid)
+
+      if pick_random == AI_PLAYER and not game_over:
+        col, minimax_score = minimax(grid, 5, -math.inf, math.inf, True)
+        if is_pasition_location(grid, col):
+          row = get_next_row(grid, col)
+          grid[row][col] = AI_PLAYER_PIECE
+
+       if search_win(grid, AI_PLAYER_PIECE):
+          label = my_font.render("You lose!", 1, RED)
+          screen.blit(label, (10, 10))
+          game_over = True
+        pick_random += 1
+        pick_random  = pick_random % 2
+        draw_grid(grid)
+    if game_over:
+      pg.time.wait(2500)
+if__name__=="__main__":
+  main()
+  pg.quit()
