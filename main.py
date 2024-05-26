@@ -1,12 +1,20 @@
-class Msdf:
-    ppfs = 55
-    def __init__(self):
-        self.a = 0
-        self.b = 5
+food_components = {
+            "bun": 6,
+            "meat": 6,
+            "sausage": 6,
+            "bacon": 6,
+            "cheese": 6,
+            "onion": 6,
+            "cucumber": 6,
+            "tomato": 6,
+            "chili": 6,
+            "avocado": 6,
+            "cabbage": 6,
+            "jalapeno": 6,
+            "mayonnaise": 6,
+            "ketchup": 6,
+            "mustard": 6
+        }
 
-    def pp(self, f):
-        self.aaaaaaaa = 5
-        print(locals())
-
-m = Msdf()
-m.pp(f=7)
+for el in food_components.items():
+    print(el)

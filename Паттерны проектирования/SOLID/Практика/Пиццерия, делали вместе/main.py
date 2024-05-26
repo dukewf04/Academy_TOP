@@ -98,4 +98,4 @@ if __name__ == "__main__":
     FileHandler.save_order_to_file(order_history.view_statistics(order))
     FileHandler.retrieve_orders_from_file()
 
-    # pizza_menu.menuUser()
+    pizza_menu.menuUser()
