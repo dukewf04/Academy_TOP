@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 from View.View import View
 from Model.FoodStore import FoodStore
 from Model.HotDog import HotDog
@@ -15,3 +16,13 @@ if __name__ == "__main__":
 
     while True:
         view.main_menu()
+=======
+from View import Menu
+from FoodStore import FoodStore
+
+
+if __name__ == "__main__":
+    food_store = FoodStore(10,10,10,10,10,10,10,10,10,10,10,10,10,10,10)
+    menu = Menu(food_store)
+    menu.show_menu()
+>>>>>>> Stashed changes
