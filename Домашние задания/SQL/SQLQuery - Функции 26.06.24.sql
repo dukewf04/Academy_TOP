@@ -174,18 +174,42 @@ return (
 go
 select * from getAllSales('Компьютер');
 
--- 6. Функция возвр. инф. о всех покупателях однофамильцах.
+
+-- 6. Функция возвр. инф. о всех продавцах однофамильцах.
+create function famioWorker()
+returns table
+as
+return(
+select *
+	from workers
+	where surname in (
+		select surname
+		from workers
+		group by surname
+		having count(surname) > 1
+	)
+)
+go
+select * from famioWorker()
+
+
+-- 7. Функция возвр. инф. о всех покупателях однофамильцах.
 create function famioClient()
 returns table
 as
 return(
-	select *
-	from clients as c
-	group by c.surname
+select *
+	from clients
+	where surname in (
+		select surname
+		from clients
+		group by surname
+		having count(surname) > 1
+	)
 )
 go
-
 select * from famioClient()
+
 
 -- 8. Функция возвр. инф. о всех покупателях и продавцах однофамильцах.
 create function famio()
