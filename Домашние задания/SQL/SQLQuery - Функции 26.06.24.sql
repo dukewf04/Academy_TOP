@@ -162,3 +162,52 @@ select * from GetDateMaxSales();
 
 -- 5. Функция возвр. инф. о всех продажах заданного товара.
 -- Название товара передаётся в качестве параметра
+create function getAllSales(@product nvarchar(30))
+returns table
+as
+return (
+	select s.*
+	from sales as s
+	inner join products as p on p.id = s.product_id
+	where p.name = @product
+)
+go
+select * from getAllSales('Компьютер');
+
+-- 6. Функция возвр. инф. о всех покупателях однофамильцах.
+create function famioClient()
+returns table
+as
+return(
+	select *
+	from clients as c
+	group by c.surname
+)
+go
+
+select * from famioClient()
+
+-- 8. Функция возвр. инф. о всех покупателях и продавцах однофамильцах.
+create function famio()
+returns table
+as
+return(
+	select c.name, c.surname, c.gender, 'Покупатель' as 'Кем является'
+	from clients as c
+	where c.surname in (
+		select surname
+		from workers
+	)
+
+	union
+
+	select w.name, w.surname, w.gender, 'Продавец' as 'Кем является'
+	from workers as w
+	where w.surname in (
+		select surname
+		from clients
+	)
+)
+go
+
+select * from famio()
