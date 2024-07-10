@@ -130,7 +130,7 @@ CREATE TABLE visits (
 
 INSERT INTO visits 
 VALUES
-(1, 1, 1, '2024-03-15', 600, 5, 'Вроде ок'),
+(1, 2, 1, '2024-04-15', 600, 5, 'Вроде ок'),
 (2, 3, 1, '2024-02-5', 800, 5, 'Вроде ок'),
 (3, 2, 2, '2024-01-1', 600, 2, 'Был пьяный!');
 
@@ -193,23 +193,6 @@ go
 select * from funcGetBarbersWithWorkExperience(13);
 
 -- 6. Вернуть количество синьор-барберов и количество джуниор-барберов
-create procedure getSeniorAndJuniorBarbers
-as
-begin
-	select
-		case
-			when p.name like '%джуниор%' THEN count(b.position_id)
-			else null
-		end as 'Количество джунов',
-		case
-			when p.name like '%синьор%' THEN count(b.position_id)
-			else null
-		end as 'Количество синьоров'
-	from barbers as b
-	inner join positions as p on p.id = b.position_id
-end
-exec getSeniorAndJuniorBarbers
-
 CREATE PROCEDURE getSeniorAndJuniorBarbers
 AS
 BEGIN
@@ -218,6 +201,66 @@ BEGIN
         SUM(CASE WHEN p.name LIKE '%синьор%' THEN 1 ELSE 0 END) AS 'Количество синьоров'
     FROM barbers AS b
     INNER JOIN positions AS p ON p.id = b.position_id
-    GROUP BY p.name
 END
 EXEC getSeniorAndJuniorBarbers;
+
+--7. Вернуть информацию о постоянных клиентах. Критерий постоянного клиента: был в салоне заданное количество раз.
+-- Количество передаётся в качестве параметра.
+create function getLoyalCustomers(@visits_count int)
+returns table
+as
+return (
+	select c.id, c.name, c.surname, c.email, count(v.id) as 'Количество посещений'
+	from clients as c
+	INNER JOIN visits AS v ON v.client_id = c.id
+	group by c.id, c.name, c.surname, c.email
+	having count(v.id) > 1
+)
+go
+select * from getLoyalCustomers(2);
+
+--8. Запретить возможность удаления информации о чиф-барбере, если не добавлен второй чиф-барбер
+create trigger PreventChiefBarberDeletion
+ON barbers
+INSTEAD OF DELETE
+AS	
+BEGIN
+	declare @pos_id int, @id int
+
+	select @pos_id = deleted.position_id, @id = deleted.id
+	from deleted
+
+	-- Чиф барбер имеет id = 1
+	IF (SELECT COUNT(*) FROM barbers WHERE position_id = 1) <= 1 AND @pos_id = 1
+	BEGIN
+		RAISERROR ('Невозможно удалить единственного чиф-барбера.', 0, 1);
+		ROLLBACK TRANSACTION;
+	END
+	ELSE
+	BEGIN
+		delete from barbers
+		where id = @id
+	END
+END
+
+--9. Запретить добавлять барберов младше 21 года.
+create trigger CheckAgeBeforeInsertingBarber
+on barbers
+instead of insert
+as
+begin
+	declare @age int
+	select @age = (datepart(year, getdate()) - YEAR(inserted.birthday))
+	from inserted
+
+	if @age < 21
+	begin
+		RAISERROR ('Невозможно добавить барбера младше 21 года!', 0, 1);
+		ROLLBACK TRANSACTION;
+	end
+	else
+	begin
+		INSERT INTO barbers(name, surname, email, birthday, employment_date, position_id, service_id, feedback_id, grade_id)
+		select name, surname, email, birthday, employment_date, position_id, service_id, feedback_id, grade_id from inserted
+	end
+end
