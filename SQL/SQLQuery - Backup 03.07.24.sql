@@ -34,22 +34,14 @@ with init;
 -- 1. Восстановление из полной резервной копии
 restore database SportShop
 from disk = 'D:\DB_back.bak'
-with replace
+with norecovery, replace;
 
 -- 2. Провести восстановление из разностной резервной копии
-RESTORE DATABASE SportShop
-FROM DISK = 'D:\DB_back.bak'
-WITH NORECOVERY
-
-RESTORE DATABASE SportShop
-FROM DISK = 'D:\DB_back_diff.bak'
-WITH NORECOVERY;
-
-ALTER DATABASE SportShop
-SET MULTI_USER;
-GO
-
+restore database SportShop
+from disk = 'D:\DB_back_diff.bak'
+with norecovery;
 
 -- 3.  Провести восстановление из резервной копии журнала транзакций.
 restore log SportShop
-from disk = 'D:\Log_backup.trn'
+from disk = 'D:\DB_log.trn'
+with recovery;
