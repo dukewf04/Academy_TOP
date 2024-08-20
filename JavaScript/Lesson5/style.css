@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 5px; /* Ширина бордера */
+  border: 5px solid transparent; /* Цвет бордера здесь не важен */
+  border-image: linear-gradient(90deg, #ff007a, #ff7a00, #ff007a);
+  border-image-slice: 1;
+  animation: running-border 3s linear infinite;
+}
+
+@keyframes running-border {
+  0% {
+      border-image-source: linear-gradient(90deg, #ff007a, #fcca9c, #ff007a);
+  }
+  25% {
+      border-image-source: linear-gradient(180deg, #ff007a, #fcca9c, #ff007a);
+  }
+  50% {
+      border-image-source: linear-gradient(270deg, #ff007a, #fcca9c, #ff007a);
+  }
+  75% {
+      border-image-source: linear-gradient(0deg, #ff007a, #fcca9c, #ff007a);
+  }
+  100% {
+      border-image-source: linear-gradient(90deg, #ff007a, #fcca9c, #ff007a);
+  }
+}
+
+li {
+  list-style: none;
+  border-radius: 8px;
+  background-color: rgb(151, 149, 245);
+  width: 100px;
+  padding: 3px 5px;
+  letter-spacing: 0.05rem;
+  margin-bottom: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+li:hover {
+  background-color: rgb(102, 100, 247);
+  transform: scale(1.1);
+}
+
+li:active {
+  transform: translateX(2px);
+}
+
+.alert {
+  padding: 15px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #dff0d8;
+}
