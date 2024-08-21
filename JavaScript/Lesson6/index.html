@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="scriptArrays.js" defer></script>
+    <title>JS</title>
+  </head>
+  <body class="border" onkeypress="keyHandler(e)">
+    <div id="clickableDiv0">Блок 0</div>
+    <div onclick="alert('asdf')">Блок 1</div>
+    <div id="clickableDiv2">Блок 2</div>
+    <div id="clickableDiv3">Блок 3</div>
+    <div id="colorBlock">Color блок</div>
+    <h1>Mouse enter / Mouse over</h1>
+    <div id="d1">
+      <div id="d2"></div>
+    </div>
+    <p>Mouse Enter <span id="s1"></span></p>
+    <p>Mouse Over <span id="s2"></span></p>
+    <h1>Нажмите пробел</h1>
+    <div id="gunWrapper">
+      <div id="gun"></div>
+      <div id="bullet"></div>
+      <div id="aim"></div>
+    </div>
+  </body>
+  <script>
+    clickableDiv2.onclick = function () {
+      alert("Div block 2 clicked!");
+    };
+
+    clickableDiv3.addEventListener("click", () => {
+      alert("DIV block 3 clicked");
+    });
+
+    clickableDiv0.onclick = function (e) {
+      console.log(e.clientX);
+    };
+
+    colorBlock.addEventListener("click", () => {
+      colorBlock.style.backgroundColor = `rgb(${255 * Math.random()}, ${
+        255 * Math.random()
+      }, ${255 * Math.random()})`;
+      colorBlock.style.transform = `rotate(${360 * Math.random()}deg)`;
+    });
+
+    // ----------- Mouse enter / Mouse over --------------
+    d1.onmouseenter = (e) => {
+      s1.innerText = "d1";
+      console.log("d1.onmouseenter");
+    };
+    d1.onmouseover = () => {
+      s2.innerText = "d1";
+      console.log("d1.onmouseover");
+    };
+    d2.onmouseenter = (e) => {
+      s1.innerText = "d2";
+      console.log("d2.onmouseenter");
+    };
+    d2.onmouseover = (e) => {
+      s2.innerText = "d2";
+      console.log("d2.onmouseover");
+    };
+
+    // Движение пули
+    var bulletX = 30;
+    var onFly = false;
+    const moveBullet = () => {
+      if (onFly) {
+        bulletX += 5;
+        if (bulletX >= 200) {
+          bulletX = 30;
+          onFly = false;
+        } else {
+          setTimeout(moveBullet, 100);
+        }
+        bullet.style.left = bulletX + "px";
+      }
+    };
+
+    function keyHandler(e) {
+      console.log(e.code);
+      if (e.code === "Space" && !onFly) {
+        onFly = true;
+        moveBullet();
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  position: relative;
+}
+
+li {
+  list-style: none;
+  border-radius: 8px;
+  background-color: rgb(151, 149, 245);
+  width: 100px;
+  padding: 3px 5px;
+  letter-spacing: 0.05rem;
+  margin-bottom: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+li:hover {
+  background-color: rgb(102, 100, 247);
+  transform: scale(1.1);
+}
+
+li:active {
+  transform: translateX(2px);
+}
+
+.alert {
+  padding: 15px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+
+div {
+  background-color: #ff7a00;
+  box-shadow: 1px 1px 3px #7f807f;
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 1.5s;
+}
+
+#d1 {
+  border: 1px solid navy;
+  height: 200px;
+  width: 200px;
+}
+
+#d2 {
+  background-color: skyblue;
+  box-shadow: 1px 1px 20px #7f807f;
+  margin: 50px;
+  height: 100px;
+  width: 100px;
+}
+
+#gunWrapper {
+  position: relative;
+}
+
+#gun, #bullet, #aim {
+  position: absolute;  
+}
+
+#bullet, #aim {
+  border-radius: 50%;
+}
+
+#gun {
+  background: blue;
+  height: 20px;
+  width: 50px;
+  left: 0px;
+  top: 50px;
+}
+
+#bullet {
+  background: khaki;
+  height: 20px;
+  width: 20px;
+  left: 50px;
+  top: 50px;
+  z-index: -1;
+}
+
+#aim {
+  background: red;
+  height: 30px;
+  width: 30px;
+  left: 200px;
+  top: 45px;
+}
