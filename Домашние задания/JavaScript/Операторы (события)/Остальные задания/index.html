@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Задание 1. Ввод имени пользователя.</h1>
+    <div class="t1-wrapper">
+      <label for="t1-name">Введите ваше имя</label>
+      <input
+        id="t1-name"
+        type="text"
+        placeholder="Имя пользователя"
+        onkeydown="handleInput(event)"
+      />
+    </div>
+
+    <h1>Задание 2. Модальное окно.</h1>
+    <button onclick="handleOpenModal()">Открыть модальное окно</button>
+    <div class="t2-wrapper">
+      <h3>Hello from Modal Window!</h3>
+      <button class="t2-buttonClose" onclick="handleCloseModal()">Close</button>
+    </div>
+
+    <h1>Задание 4. Светофор.</h1>
+    <div class="t4-wrapper">
+      <div class="t4-container">
+        <div class="t4-red"></div>
+        <div class="t4-yellow"></div>
+        <div class="t4-green"></div>
+      </div>
+      <button class="t4-button" onclick="handleChangeLight()">NEXT</button>
+    </div>
+
+    <h1>Задание 5. Список книг.</h1>
+    <ol class="t5-books">
+      <li>
+        <p><b>"1984"</b> Автор: Джордж Оруэлл</p>
+      </li>
+      <li>
+        <p><b>"Война и мир"</b>Автор: Лев Толстой</p>
+      </li>
+      <li>
+        <p><b>"Мастер и Маргарита"</b>Автор: Михаил Булгаков</p>
+      </li>
+      <li>
+        <p><b>"Преступление и наказание"</b>Автор: Фёдор Достоевский</p>
+      </li>
+      <li>
+        <p><b>"Гордость и предубеждение"</b>Автор: Джейн Остин</p>
+      </li>
+      <li>
+        <p><b>"Одиссея"</b>Автор: Гомер</p>
+      </li>
+      <li>
+        <p><b>"Властелин колец"</b>Автор: Дж. Р. Р. Толкин</p>
+      </li>
+    </ol>
+  </body>
+</html>

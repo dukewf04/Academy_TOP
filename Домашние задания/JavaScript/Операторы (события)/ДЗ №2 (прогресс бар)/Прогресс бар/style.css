@@ -1,0 +1,134 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10px;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+button {
+  height: 20px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+/* Задание 1 */
+.t1-wrapper {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  background-color: rgb(98, 171, 231);
+}
+
+/* Задание 3 */
+.t3-content {
+  display: none;
+}
+
+/* Задание 4 */
+.t2-wrapper {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  border: 3px solid rgb(107, 107, 237);
+}
+
+.t2-sidebar {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgb(107, 107, 237);
+  color: #fff;
+}
+
+.t2-sidebar span {
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  border-radius: 0px;
+  padding-top: 5px;
+}
+
+.t2-sidebar span:hover {
+  background-color: rgb(49, 49, 240);
+}
+
+.t2-sidebar span:active {
+  transform: translateY(1px);
+}
+
+.t2-content {
+  width: 100%;
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Задание 5 */
+.t5-wrapper {
+  width: 800px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+}
+
+.t5-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.t5-content {
+  margin-bottom: 5px;
+}
+
+/* Задание 5 */
+.t6-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  gap: 10px;  
+  margin-top: 5px;
+  background-color: bisque;
+  padding: 10px;
+}
+
+.t6-wrapper button {
+  height: 30px;
+  width: max-content;
+  padding: 0 20px;
+}
+
+.t6-bar {
+  width: 80%;
+  height: 35px;
+  border: 2px solid gray;
+}
+
+.t6-bar-progress {
+  width: 0px;
+  height: 100%;
+  background-color: blue;
+}

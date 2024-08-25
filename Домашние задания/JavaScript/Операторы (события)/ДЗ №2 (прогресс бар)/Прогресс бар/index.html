@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Прогресс бар</title>
+  </head>
+  <body>
+    <h1>Задание 1. Случайные числа.</h1>
+    <div class="t1-wrapper">
+      <p>Random number:</p>
+      <p id="t1-number">_</p>
+      <button id="t1-btnRandom" onclick="handleClick(event)">Generate random number</button>
+    </div>
+
+    <h1>Задание 3. Скрывающийся текст.</h1>
+    <div class="t1-wrapper">
+      <button onclick="handleClickShow(event)">Hide / show text</button>
+      <div class="t3-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laboriosam voluptas
+        consectetur quis quae! Aperiam nemo nobis officia, assumenda incidunt, distinctio pariatur
+        quod officiis, commodi debitis nihil facilis accusantium recusandae!
+      </div>
+    </div>
+
+    <h1>Задание 4. Страница со вкладками.</h1>
+    <div class="t2-wrapper">
+      <div class="t2-sidebar">
+        <span id="t2-sidebar_0" class="t2-sidebar-item">HTML</span>
+        <span id="t2-sidebar_1" class="t2-sidebar-item">CSS</span>
+        <span id="t2-sidebar_2" class="t2-sidebar-item">JS</span>
+      </div>
+      <div class="t2-content"></div>
+    </div>
+
+    <h1>Задание 5. Список новостей.</h1>
+    <div class="t5-container">
+      <div id="t5-0" class="t5-wrapper">
+        <div class="t5-header">
+          <span class="t5-header-title"><b>What is Lorem Ipsum?</b></span>
+          <button id="t5-btn_0">Remove</button>
+        </div>
+        <div class="t5-content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis in quibusdam
+          necessitatibus sed! Doloribus exercitationem explicabo incidunt fuga, adipisci error illo
+          in obcaecati quidem fugiat officia sit saepe placeat nemo.
+        </div>
+        <hr />
+      </div>
+
+      <div id="t5-1" class="t5-wrapper">
+        <div class="t5-header">
+          <span class="t5-header-title"><b>Why do we use it?</b></span>
+          <button id="t5-btn_1">Remove</button>
+        </div>
+        <div class="t5-content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis in quibusdam
+          necessitatibus sed! Doloribus exercitationem explicabo incidunt fuga, adipisci error illo
+          in obcaecati quidem fugiat officia sit saepe placeat nemo.
+        </div>
+        <hr />
+      </div>
+
+      <div id="t5-2" class="t5-wrapper">
+        <div class="t5-header">
+          <span class="t5-header-title"><b>Where does it come from?</b></span>
+          <button id="t5-btn_2">Remove</button>
+        </div>
+        <div class="t5-content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis in quibusdam
+          necessitatibus sed! Doloribus exercitationem explicabo incidunt fuga, adipisci error illo
+          in obcaecati quidem fugiat officia sit saepe placeat nemo.
+        </div>
+        <hr />
+      </div>
+    </div>
+
+    <h1>Задание 6. Прогресс бар.</h1>
+    <div class="t6-wrapper">
+      <div id="t6-bar" class="t6-bar">
+        <div id="t6-bar-progress" class="t6-bar-progress"></div>
+      </div>
+      <button onclick="handleAddProgressBar(event)">Add 5 percent</button>
+    </div>
+  </body>
+</html>
