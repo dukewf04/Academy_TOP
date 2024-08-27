@@ -1,0 +1,22 @@
+body {
+  font-family: "Arial", sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: bisque;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.tdRed {
+  background-color: red;
+}
+
+.tdWhite {
+  background-color: bisque;
+}

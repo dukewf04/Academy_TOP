@@ -1,0 +1,33 @@
+body {
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+
+img {
+  width: 30px;
+  margin-bottom: 5px;
+}
+
+#like {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 140px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgb(91, 187, 238);
+  color: #fff;
+  font-size: 25px;
+  padding: 0 12px;
+  border: none;
+  cursor: pointer;
+}
+
+#like:hover {
+  background-color: rgb(72, 143, 181);
+}
+
+#like:active {
+  transform: translateY(1px);
+}
