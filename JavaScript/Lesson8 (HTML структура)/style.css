@@ -1,0 +1,17 @@
+#d1 {
+  border: 2px solid navy;
+  height: 150px;
+  margin: 20px;
+  width: 400px;
+  padding: 15px;
+}
+
+#d2 {
+  border: 1px dashed navy;
+  height: 120px;
+  float: right;
+  width: 200px;
+  padding: 15px;
+  overflow: 15px;
+  font-size: 12px;
+}
