@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Записи в истории браузера</title>
+  </head>
+  <body>
+    <button id="historyButton">Показать количество записей в истории</button>
+    <p id="historyCount"></p>
+  
+    <script>
+      document.getElementById('historyButton').addEventListener('click', function() {
+        if (history.length) {
+          document.getElementById('historyCount').textContent = "Количество записей в истории: " + history.length;
+        } else {
+          document.getElementById('historyCount').textContent = "История браузера не доступна.";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Список языков</title>
+  </head>
+  <body>
+    <h1>Установленные языки</h1>
+    <ul id="languageList"></ul>
+  
+    <script>
+      const languages = navigator.languages;
+  
+      const preferredLanguage = navigator.language || navigator.userLanguage;
+  
+      const languageList = document.getElementById("languageList");
+      for (let i = 0; i < languages.length; i++) {
+        const language = languages[i];
+        const listItem = document.createElement("li");
+        if (language === preferredLanguage) {
+          listItem.innerHTML = `<strong>${language}</strong>`;
+        } else {
+          listItem.textContent = language;
+        }
+        languageList.appendChild(listItem);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>BOM DOM</title>
+  </head>
+  <body>
+    <h1>Задание 1. Ввод числа через кнопки.</h1>
+    <div class="t1_container">
+      <span id="t1_number">0</span>
+      <div class="t1_button_container">
+        <button id="t1_plus">&#9650;</button>
+        <button id="t1_minus">&#9660;</button>
+      </div>
+    </div>
+
+    <h1>Задание 2. Цветные блоки.</h1>
+    <div class="t2_container">
+      <div class="t2_colors"></div>
+      <button id="t2_add_block">Add block</button>
+    </div>
+
+    <h1>Задание 3. Палитра цветов.</h1>
+    <div>
+      <input type="color" id="t3ColorPicker" value="#e66465" />
+      <label for="t3ColorPicker">Выбор цвета</label>
+    </div>
+    <p id="t3Text" style="width: 500px">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis explicabo similique
+      accusamus possimus consectetur ea? Quos deleniti sint delectus sed aspernatur in id tenetur
+      sapiente. Blanditiis doloribus nam dolor autem? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Corporis explicabo similique accusamus possimus consectetur ea? Quos
+      deleniti sint delectus sed aspernatur in id tenetur sapiente. Blanditiis doloribus nam dolor
+      autem?
+    </p>
+
+    <h1>Задание 4. Комментарии к статье.</h1>
+    <div class="t4Container">
+      <h4 style="margin-top: 5px">What is Lorem Ipsum?</h4>
+      <span
+        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem dicta, quam earum
+        recusandae aperiam omnis eligendi, accusantium similique quis, odio animi ex deleniti
+        aliquam voluptas? Aut aperiam sed tenetur maxime.</span
+      >
+      <hr />
+      <div style="line-height: 1.3" id="t4Comments"></div>
+      <div id="t4Feedback">
+        <b>Leave your comment</b>
+        <div>
+          <label for="t4Name">Name:</label>
+          <input style="width: 300px" type="text" id="t4Name" />
+        </div>
+        <label for="t4Comment">Comment</label>
+        <textarea style="width: 99%" id="t4Comment" rows="5"></textarea>
+        <button style="width: 100%" id="t4AddComment">Add comment</button>
+      </div>
+    </div>
+
+    <h1>Задание 5. Выпадающий список.</h1>
+    <input type="text" id="t5Input" />
+    <ul id="t5Countries"></ul>
+  </body>
+</html>

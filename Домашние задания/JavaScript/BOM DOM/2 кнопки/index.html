@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>2 кнопки</title>
+  </head>
+  <body>
+    <button id="openWindow">Открыть новое окно</button>
+    <button id="closeWindow">Закрыть окно</button>
+  
+    <script>
+      let newWindow;
+  
+      document.getElementById('openWindow').addEventListener('click', () => {
+        newWindow = window.open('https://itstep.org', '_blank', 'width=640,height=480');
+      });
+  
+      document.getElementById('closeWindow').addEventListener('click', () => {
+        if (newWindow) {
+          newWindow.close();
+        }
+      });
+    </script>
+  </body>
+</html>
