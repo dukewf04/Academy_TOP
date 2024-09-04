@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Формы. Телефонная книга.</title>
+  </head>
+  <body>
+    <h2>Добавить новый контакт</h2>
+    <form
+      method="get"
+      id="logForm"
+      action=""
+      onsubmit="return checkForm(event)"
+    >
+      <b><label for="name">Имя </label></b>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="Введите имя"
+        class="rounded"
+      /><br />
+
+      <b><label for="login">Логин </label></b>
+      <input
+        id="login"
+        name="login"
+        type="text"
+        placeholder="Введите логин"
+        class="rounded"
+      /><br />
+
+      <b><label for="password">Пароль </label></b>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Введите Пароль"
+        class="rounded"
+      /><br />
+
+      <b><label for="ph">Номер телефона </label></b>
+      <input
+        id="ph"
+        name="phone"
+        type="text"
+        placeholder="Введите номер телефона"
+        class="rounded"
+      /><br />
+
+      <b>Тип телефона</b>
+      <select name="type" class="rounded">
+        <option value="1" selected>Общий</option>
+        <option value="2">Рабочий</option>
+        <option value="3">Домашний</option></select
+      ><br />
+
+      <b>Город</b>
+      <select name="city" class="rounded">
+        <option value="1" selected>Пермь</option>
+        <option value="2">Екатеринбург</option>
+        <option value="3">Уфа</option></select
+      ><br />
+
+      <b>Приоритет </b>
+      <input type="radio" name="main" value="1" checked /><br /><br />
+
+      <input id="enter" type="submit" value="Сохранить" />
+
+      <input
+        id="enter1"
+        type="button"
+        value="Еще один контакт"
+        onclick="addClick()"
+        style="margin-left: 50px"
+      /><br />
+    </form>
+  </body>
+</html>
