@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: beige;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+}
+
+#name,
+#message {
+  width: 100%;
+}
+
+label {
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+#send {
+  width: 95%;
+  display: block;
+  margin: 0 auto;
+}
+
+.posts {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
+  padding: 0;
+  flex-wrap: wrap;
+  padding-top: 5px;
+}
+
+.posts-message {
+  display: flex;
+  border-top: 1px solid gray;
+  padding: 10px;
+  width: 100%;
+  margin-top: 5px;
+}

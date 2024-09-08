@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Магазин книг</title>
+  </head>
+  <body>
+    <form id="orderForm">
+      <label for="book">Выберите книгу:</label>
+      <select id="book">
+        <option value="Мастер и Маргарита">Мастер и Маргарита</option>
+        <option value="Дурак">Дурак</option>
+        <option value="Красавица и чудовище">Красавица и чудовище</option>
+      </select>
+
+      <label for="quantity">Количество:</label>
+      <input type="number" id="quantity" min="1" value="1" />
+
+      <label for="name">Ваше имя:</label>
+      <input type="text" id="name" required />
+
+      <label for="deliveryDate">Дата доставки:</label>
+      <input type="date" id="deliveryDate" required />
+
+      <label for="address">Адрес доставки:</label>
+      <textarea id="address" required></textarea>
+
+      <label for="comment">Комментарий:</label>
+      <textarea id="comment"></textarea>
+
+      <button type="submit">Оформить заказ</button>
+    </form>
+
+    <div style="margin-top: 20px" id="orderConfirmation"></div>
+  </body>
+</html>

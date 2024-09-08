@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+form {
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 5px;
+  width: 600px;
+}
+
+#result {
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 25px;
+  width: 600px;
+}
+
+#resultText {
+  border: 1px solid gray;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}

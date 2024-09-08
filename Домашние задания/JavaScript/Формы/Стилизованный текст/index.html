@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Стилизованный текст</title>
+  </head>
+  <body onload="onLoad()">
+    <form>
+      <input type="checkbox" id="bold" value="bold">
+      <label for="bold">Bold</label>
+      <input type="checkbox" id="underline" value="underline">
+      <label for="underline">Underline</label>
+      <input type="checkbox" id="italic" value="italic">
+      <label for="italic">Italic</label>
+      <input type="radio" name="alignment" id="left" value="left">
+      <label for="left">Left</label>
+      <input type="radio" name="alignment" id="right" value="right">
+      <label for="right">Right</label>
+      <input type="radio" name="alignment" id="justify" value="justify">
+      <label for="justify">Justify</label>
+      <textarea style="width: 100%; margin: 5px 0;" name="text" id="text" rows="10"></textarea><br>
+      <input style="width: 100%;" type="submit" id="show" value="Show text">
+    </form><br>
+
+    <div id="result">Result:
+      <div id="resultText"></div>
+    </div>
+  </body>
+</html>

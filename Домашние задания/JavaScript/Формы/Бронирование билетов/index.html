@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Бронирование билетов</title>
+  </head>
+  <body>
+    <div class="container">
+      <div style="margin-top: 10px;" id="searchField">
+        <label for="direction">Direction: </label>
+        <select id="direction">
+          <option value="pm">Пермь - Москва</option>
+          <option value="pd">Пермь - Дубаи</option>
+          <option value="sk">Санкт-Петербург - Краснодар</option>
+        </select>
+  
+        <label for="date">Date:</label>
+        <input type="date" id="date" required />
+  
+        <button type="submit" id="search">Search</button>
+      </div>
+      <hr style="width: 100%;"/>
+      <div style="margin-top: 20px" id="orderConfirmation"></div>
+      <button id="book" style="margin-top: 20px; align-self: flex-end; display: none;">Book</button>
+
+      <div id="tickets">
+        <table id="tableSeats">
+          <tr>
+            <th>Direction</th>
+            <th>Date</th>
+            <th>Seat</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Формы</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="container"></div>
+      <form class="newMessage">
+        <h3 style="text-align: center">Add new message:</h3>
+        <div class="input">
+          <label for="name"><b>Your name:</b></label> <input style="height: 25px;" type="text" id="name" name="name" />
+        </div>
+        <br />
+
+        <div class="input"> 
+          <label for="message"><b>Your message:</b></label>
+          <textarea name="message" id="message" rows="3"></textarea>
+        </div>
+        <br />
+        <button type="button" style="text-align: center" id="send" >Send</button>
+      </form>
+    </div>
+  </body>
+</html>
