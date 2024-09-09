@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Форма для заполнения информации о пользователе</title>
+  </head>
+  <body>
+    <div class="container">
+      <label for="firstname">First name</label>
+      <input type="text" id="firstname" />
+
+      <label for="lastname">Last name</label>
+      <input type="text" id="lastname" /><br /><br />
+
+      <label for="birthday">Birthday</label>
+      <input type="text" id="birthday" />
+
+      Gender: <input type="radio" id="male" /><label for="male">Male</label>
+      <input type="radio" id="female" /><label for="female">female</label><br /><br />
+
+      <label for="country">country</label>
+      <input type="text" id="country" />
+
+      <label for="city">city</label>
+      <input type="text" id="city" /><br /><br />
+
+      Skills: <input type="checkbox" name="html" id="html" value="HTML" /><label for="html"
+        >HTML</label
+      >
+      <input type="checkbox" name="css" id="css" value="CSS" /><label for="css">CSS</label>
+      <input type="checkbox" name="js" id="js" value="JS" /><label for="js">JS</label><br><br>
+
+      <button id="saveButton">Save</button>
+    </div>
+  </body>
+</html>

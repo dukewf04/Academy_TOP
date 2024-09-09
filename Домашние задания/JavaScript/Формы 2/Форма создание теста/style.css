@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+.question-list {
+  margin-bottom: 20px;
+}
+.question-list li {
+  margin-bottom: 5px;
+}

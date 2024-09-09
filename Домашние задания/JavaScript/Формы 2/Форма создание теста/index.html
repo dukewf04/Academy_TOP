@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Форма создание теста</title>
+  </head>
+  <body>
+    <h1>Создание теста</h1>
+
+    <div class="question-list">
+      <h2>Вопросы:</h2>
+      <ul id="questions"></ul>
+    </div>
+
+    <form id="addQuestionForm">
+      <h2>Добавить вопрос:</h2>
+      <label for="questionText">Вопрос:</label>
+      <input type="text" id="questionText" name="questionText" /><br /><br />
+
+      <label for="correctAnswer">Правильный ответ:</label>
+      <input type="text" id="correctAnswer" name="correctAnswer" /><br /><br />
+
+      <label for="wrongAnswer">Неверный ответ:</label>
+      <input type="text" id="wrongAnswer" name="wrongAnswer" /><br /><br />
+
+      <button type="submit">Добавить вопрос</button>
+    </form>
+
+    <script>
+      const questionsList = document.getElementById('questions');
+      const addQuestionForm = document.getElementById('addQuestionForm');
+
+      addQuestionForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const questionText = document.getElementById('questionText').value;
+        const correctAnswer = document.getElementById('correctAnswer').value;
+        const wrongAnswer = document.getElementById('wrongAnswer').value;
+
+        const newQuestionItem = document.createElement('li');
+        newQuestionItem.textContent = `${questionText} (Правильный: ${correctAnswer}, Неверный: ${wrongAnswer})`;
+        questionsList.appendChild(newQuestionItem);
+
+        document.getElementById('questionText').value = '';
+        document.getElementById('correctAnswer').value = '';
+        document.getElementById('wrongAnswer').value = '';
+      });
+    </script>
+  </body>
+</html>

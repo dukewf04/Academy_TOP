@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Палитра цветов</title>
+  </head>
+  <body>
+    <h1>Палитра цветов</h1>
+
+    <div>
+      <label for="red">R:</label>
+      <input type="number" id="red" min="0" max="255" value="0" />
+      <label for="green">G:</label>
+      <input type="number" id="green" min="0" max="255" value="0" />
+      <label for="blue">B:</label>
+      <input type="number" id="blue" min="0" max="255" value="0" />
+      <button id="add-color">Add Color</button>
+    </div>
+
+    <div id="palette"></div>
+
+    <script>
+      const palette = document.getElementById('palette');
+      const redInput = document.getElementById('red');
+      const greenInput = document.getElementById('green');
+      const blueInput = document.getElementById('blue');
+      const addColorButton = document.getElementById('add-color');
+
+      addColorButton.addEventListener('click', () => {
+        const red = redInput.value;
+        const green = greenInput.value;
+        const blue = blueInput.value;
+        const rgbColor = `rgb(${red}, ${green}, ${blue})`;
+
+        const colorSquare = document.createElement('div');
+        colorSquare.classList.add('color-square');
+        colorSquare.style.backgroundColor = rgbColor;
+
+        const colorLabel = document.createElement('span');
+        colorLabel.textContent = rgbColor;
+
+        const colorItem = document.createElement('div');
+        colorItem.classList.add('color-item');
+        colorItem.appendChild(colorSquare);
+        colorItem.appendChild(colorLabel);
+
+        palette.appendChild(colorItem);
+      });
+    </script>
+  </body>
+</html>

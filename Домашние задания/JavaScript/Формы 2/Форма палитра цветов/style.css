@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+.color-square {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  margin: 5px;
+  display: inline-block;
+}
+
+.color-item {
+  display: flex;
+  align-items: center;
+}
