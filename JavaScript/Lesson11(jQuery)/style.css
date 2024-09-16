@@ -1,0 +1,7 @@
+.fromTopToDown {
+    animation: fromTopToDown 2s ease-out infinite;
+    position: relative;
+    transition: .3s;
+    display: inline-block;
+    transition: all 0.5s;
+}
