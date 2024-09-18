@@ -8,54 +8,53 @@
 // {2} - ровно 2 повтора, {2,7} - от 2 до 7 повторов
 // Например: "\d{7}" - семь цифр подрят, "\s+" - один или более пробельный символ
 // для отображения спец. символа: "/$/"
-//var templateName = new RegExp("/^[a-zA-Z]+*$/");
+var templateName = /^[a-z]*$/;
 var templatePhone = /^\+\d{12}$/;
 var templateLogin = /^[A-Z][a-z]*$/;
 function checkForm() {
   //обработка имени пользователя
-  var nameText = document.getElementById("name").value;
-  var loginText = document.getElementById("login").value;
-  var passwordText = document.getElementById("password").value;
-  var phoneText = document.getElementById("ph").value;
-  // if (!templateName.exec(nameText)) {
-  //   alert("Неверное имя");
-  //   return false;
-  // }
-  // //обработка логина
-  // if (!templateLogin.exec(loginText)) {
-  //   alert("Неверный логин");
-  //   return false;
-  // }
-  // //обработка пароля
-  // if (!passwordText.lenght < 6) {
-  //   alert("Неверный пароль");
-  //   return false;
-  // }
-  // if (!templatePhone.exec(phoneText)) {
-  //   alert("Неверный номер телефона");
-  //   return false;
-  // }
+  var nameText = document.getElementById('name').value;
+  var loginText = document.getElementById('login').value;
+  var passwordText = document.getElementById('password').value;
+  var phoneText = document.getElementById('ph').value;
+  if (templateName.exec(nameText)) {
+    alert('Неверное имя');
+    return false;
+  }
+  //обработка логина
+  if (templateLogin.exec(loginText)) {
+    alert('Неверный логин');
+    return false;
+  }
+  //обработка пароля
+  if (passwordText.lenght < 6) {
+    alert('Неверный пароль');
+    return false;
+  }
+  if (templatePhone.exec(phoneText)) {
+    alert('Неверный номер телефона');
+    return false;
+  }
 
   // Создание формы регистрации на основе cookie
-  var expDate = new Date;
-  expDate.setTime(expDate.getTime() + 60*1000)
-  document.cookie = `registered=${nameText};expires=${expDate.toGMTString()};path=/`
-
+  var expDate = new Date();
+  expDate.setTime(expDate.getTime() + 60 * 1000);
+  document.cookie = `registered=${nameText};expires=${expDate.toGMTString()};path=/`;
   return true;
 }
 
 const checkReg = () => {
   let x = document.cookie;
-  let s = x.split(";");
+  let s = x.split(';');
   let cookieObject = {};
   let c;
   for (var i = 0; i < s.length; i++) {
-    c = s[i].split("=");
+    c = s[i].split('=');
     cookieObject[c[0]] = c[1];
   }
 
   if ('registered' in cookieObject) {
-    regDiv.innerHTML = `Hello ${cookieObject['registered']}`
+    regDiv.innerHTML = `Hello ${cookieObject['registered']}`;
   }
 
   // Добавление cookie-файлов в проект
@@ -71,5 +70,4 @@ const checkReg = () => {
   // document.cookie - получить все параметры для создания и заполнения
   // До 300 cookie файлов
   // от 1 домена(сайта) можно хранить до 20 значений.
-
 };
