@@ -10,10 +10,12 @@ from .models import Question, Choice
 
 # Формы представлений для страниц приложения
 class IndexView(generic.ListView):
-    template_name = 'polls/index.html'
-    context_object_name = 'latest_question_list'
-    def get_questyset(self):
-        return Question.objects.order_by("-pub_date")[:5]
+    model = Question
+    template_name = "polls/index.html"
+    context_object_name = "latest_question_list"
+
+    def get_queryset(self):
+        return Question.objects.order_by("pub_date")[:2]
 
     # try:
     #     latest_question_list = Question.objects.order_by("-pub_date")[:5]
@@ -31,28 +33,30 @@ class IndexView(generic.ListView):
 # Действие с опросами
 class DetailView(generic.DetailView):
     model = Question
-    template_name = 'polls/detail.html'
+    template_name = "polls/detail.html"
 
 
 class ResultsView(generic.DetailView):
     model = Question
-    template_name = 'polls/results.html'
-    #response = "You're looking at the results of question %s."
-    #return HttpResponse(response % question_id)
+    template_name = "polls/results.html"
+    # response = "You're looking at the results of question %s."
+    # return HttpResponse(response % question_id)
     # question = get_object_or_404(Question, pk=question_id)
     # return render(request, 'polls/results.html', {'question': question})
+
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     try:
-        selected_choice = question.choice_set.get(pk=request.POST['choice'])
-    except (KeyError):
+        selected_choice = question.choice_set.get(pk=request.POST["choice"])
+    except KeyError:
         return render(
-            request, "polls/detail.html",
+            request,
+            "polls/detail.html",
             {
                 "question": question,
                 "error_message": "Вы не сделали выбор!",
-            }
+            },
         )
     else:
         selected_choice.votes += 1
