@@ -14,13 +14,13 @@ def about(request):
 
 
 def create_post(request):
-    if request.method == 'GET':
-        context = {'form': PostForm()}
-        return render(request, 'posts/post_form.html', context)
-    elif request.method == 'POST':
+    if request.method == "GET":
+        context = {"form": PostForm()}
+        return render(request, "posts/post_form.html", context)
+    elif request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Posts')
+            return redirect("Posts")
         else:
-            return render(request, 'post/post_form.html', {'form': form})
+            return render(request, "post/post_form.html", {"form": form})
