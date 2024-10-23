@@ -5,8 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
     <script src="{% static 'js/app.js' %}" defer></script>
     <title>My Site</title>
+	  <style>
+		  body {
+		  	padding: 10px;
+		  }
+	  </style>
   </head>
   <body>
   	<header>
@@ -21,7 +29,7 @@
 	  	{% if messages %}
 			<div class="messages">
 			{% for message in messages %}
-				<div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+				<div class="alert {% if message.tags %}alert-{{ message.tags }} {% endif %}">
 					{{ message }}
 				</div>
 			{% endfor %}

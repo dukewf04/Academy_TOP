@@ -16,14 +16,16 @@ def sign_in(request):
             user = authenticate(request, username=username, password=password)
             if user:
                 login(request, user)
-                messages.success(request, f"Hello {username.title()}. Добро пожаловать!")
+                messages.success(
+                    request, f"Hello {username.title()}. Добро пожаловать!"
+                )
                 return redirect("Posts")
 
-        messages.error(request, 'invalid username/password')
-        return render(request, 'users/login.html', {'form': form})
+        messages.error(request, "invalid username/password")
+        return render(request, "users/login.html", {"form": form})
 
 
 def sign_out(request):
     logout(request)
-    messages.success(request, f'Вы вышли из аккаунта')
-    return redirect('login')
+    messages.success(request, f"Вы вышли из аккаунта")
+    return redirect("login")
